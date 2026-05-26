@@ -30,4 +30,9 @@ class Category extends Model
     {
       return $this->hasOne(CategoryTranslation::class)->where('lang_code', app()->getLocale());
     }
+
+    public function articles()
+    {
+      return $this->hasMany(Article::class);
+    }
 }
